@@ -1,0 +1,27 @@
+.header {
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    background-color: var(--primary);
+}
+.telega {
+    height: 2rem;
+}
+.github {
+    height: 2rem;
+}
+.contact {
+    margin-right: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.page-name {
+    position: absolute;
+    left: 50dvw;
+}
+.logo {
+    margin-left: 1rem;
+    max-width: 30dvw;
+}
