@@ -1,10 +1,10 @@
 :root {
-    --text: #0e100d;
-    --background: #fbfcfb;
-    --primary: #7ba865;
-    --secondary: #b5d4a6;
-    --accent: #8dc572;
+  --text: #0e100d;
+  --background: #fbfcfb;
+  --primary: #7ba865;
+  --secondary: #b5d4a6;
+  --accent: #8dc572;
 }
 * {
-    font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }

@@ -1,14 +1,16 @@
 .overlay {
-    display: flex;
-    justify-content: center;
-    height: 100dvh;
-    background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  height: 100dvh;
+  background-color: var(--background);
 }
 .page {
-    margin: 1rem;
-    width: 80dvw;
-    background-color: var(--background);
-    display:  flex;
-    justify-content: space-between;
+  margin: 1rem;
+  width: 80dvw;
+  background-color: var(--background);
+  display: flex;
+  justify-content: space-between;
 }
-
+.qPage {
+  width: 60dvw;
+}

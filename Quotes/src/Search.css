@@ -1,27 +1,27 @@
 .prop {
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary);
-    border-radius: 10px;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary);
+  border-radius: 10px;
 }
 .on {
-    background-color: var(--accent) ;
+  background-color: var(--accent);
 }
 .off {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 .search-tag {
-    font-weight: bolder;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 15px;
+  font-weight: bolder;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
 }
 .search-tags {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }

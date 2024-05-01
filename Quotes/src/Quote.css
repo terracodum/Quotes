@@ -1,26 +1,36 @@
 .quote-card {
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary);
-    margin: 1rem;
-    padding: 1rem 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  margin: 1rem;
+  padding: 1rem 2rem;
 }
 .tag-list {
-    background-color: var(--background);
-    padding: 0.2rem 0.2rem;
-    border-radius: 5px;
-    font-size: 80%;
+  background-color: var(--background);
+  padding: 0.2rem 0.2rem;
+  border-radius: 5px;
+  font-size: 80%;
 }
 .tags-quote {
-    display: flex;
-    gap: 0.3rem;
-    padding: 0.2rem 0.2rem;
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.2rem 0.2rem;
 }
 .author {
-    font-weight: 550;
-    margin-bottom: 0.4rem;;
+  font-weight: 550;
+  margin-bottom: 0.4rem;
 }
 .content {
-    font-weight: 600;
+  font-weight: 600;
+}
+.like {
+  width: 1.5rem;
+  margin-left: 1rem;
+}
+.heart {
+  border: none;
+  background-color: var(--primary);
+  height: 1.5rem;
+  width: 1.5rem;
 }
