@@ -17,11 +17,13 @@ function Quote(prop: Props) {
     return (
         <>
             <div className="quote-card">
-                <p>{prop.content}</p>
-                <p>{prop.author}</p>
-                {
-                    prop.tags.map((tag: string) => <p className="taglist">{tag}</p>)
-                }
+                <p className="content">"{prop.content}"</p>
+                <p className="author">— {prop.author}</p>
+                <div className="tags-quote">
+                    {
+                        prop.tags.map((tag: string) => <p key={tag} className="tag-list">{tag}</p>)
+                    }
+                </div>
             </div>
         </>
     );

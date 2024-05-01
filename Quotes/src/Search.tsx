@@ -59,26 +59,24 @@ function Search() {
     }
 
     useEffect(() => {
-        if (currentCategory === 'authors') {
-            FetchAuthors()
-            .then((data: any) => {
-                console.log(data);
-                setAuthors(data);
-            });
-        } else if (currentCategory === 'tags') {
-            FetchTags()
-            .then((data: any) => {
-                console.log(data);
-                setTags(data);
-            });
-        }
+        FetchAuthors()
+        .then((data: any) => {
+            console.log(data);
+            setAuthors(data);
+        });
+        FetchTags()
+        .then((data: any) => {
+            console.log(data);
+            setTags(data);
+        });
     }, [currentCategory]);
 
     function ToTag(tag: TagCls) {
         return (
             <Tag 
+                id={tag.Id}
                 name={tag.Name} 
-                id={tag.Id} 
+                key={tag.Id} 
                 count={"-1"} 
                 type="tag" 
             />
@@ -87,8 +85,9 @@ function Search() {
     function ToAuthor(author: Author) {
         return(
             <Tag
-                name={author.Name}
                 id={author.Slug}
+                name={author.Name}
+                key={author.Slug}
                 count={author.Count}
                 type="author"
             />

@@ -7,7 +7,7 @@ import GitHub from "./assets/Gh.png";
 function Header() {
     return (
         <header className="header">
-            <h3 className="logo">Quotes by Terracodum</h3>
+            <a href="/" className="logo">Quotes by Terracodum</a>
             <div className="contact">
                 <a href="https://t.me/Lucky_WoIf">
                     <img className="telega" src={Telegram} alt="Telegram" />

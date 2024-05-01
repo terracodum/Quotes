@@ -1,5 +1,9 @@
 .quote-page {
+    display:  flex;
+    flex-direction: column;
     width: 60dvw;
-    background-color: black;
-    height: 100dvh;
+    flex: 0 1 45dvw;
+}
+.list-quotes {
+    
 }

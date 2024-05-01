@@ -1,6 +1,26 @@
 .quote-card {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     background-color: var(--primary);
+    margin: 1rem;
+    padding: 1rem 2rem;
 }
 .tag-list {
-    padding: 0.1rem 0.2rem;
+    background-color: var(--background);
+    padding: 0.2rem 0.2rem;
+    border-radius: 5px;
+    font-size: 80%;
+}
+.tags-quote {
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.2rem 0.2rem;
+}
+.author {
+    font-weight: 550;
+    margin-bottom: 0.4rem;;
+}
+.content {
+    font-weight: 600;
 }

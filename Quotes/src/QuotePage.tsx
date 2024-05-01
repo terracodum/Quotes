@@ -4,12 +4,14 @@ import "./QuotePage.css";
 
 type Props = {
     type:string
+    path: string
 }
 const API = 'https://api.quotable.io/';
 
 
 function QuotePage(prop: Props) {
     const [quoteList, setQuoteList] = useState([]);
+    const [types, setTypes] = useState(prop.type ? prop.type : 'random');  //
     
     class QuoteCls {
         public Id: string;
@@ -45,8 +47,9 @@ function QuotePage(prop: Props) {
     
     function FetchAuthorQuotes(id: string) {
         let resTags = [];
-        return fetch (API + "/quotes?author="+ id,{method:"GET"}) 
+        return fetch (API + "quotes?author="+ id,{method:"GET"}) 
             .then((res)=> res.json())
+            .then((js) => js.results)
             .then((list) => {
                 for (let i = 0; i < list.length; i++ ) {
                     resTags.push(new QuoteCls(list[i]._id, list[i].content, list[i].author, list[i].authorSlug, list[i].tags));
@@ -55,19 +58,22 @@ function QuotePage(prop: Props) {
             })
     };
     
-    function FetchTagQuotes(id: string) {
+    function FetchTagQuotes(searchingTag: string) {
         let resTags = [];
-        return fetch (API + "/quotes?tag="+ id,{method:"GET"}) 
+        return fetch (API + "quotes?tag="+ searchingTag,{method:"GET"}) 
             .then((res)=> res.json())
+            .then((js) => js.results)
             .then((list) => {
                 for (let i = 0; i < list.length; i++ ) {
                     resTags.push(new QuoteCls(list[i]._id, list[i].content, list[i].author, list[i].authorSlug, list[i].tags));
                 }
+                console.log(resTags)
                 return resTags;
             })
     };
     useEffect(() => {
-        if (prop.type === "random") {
+        setTypes(prop.type);
+        if (types === "random") {
             FetchRandomQuotes()
             .then((data: any) => {
                 console.log(data);
@@ -75,14 +81,15 @@ function QuotePage(prop: Props) {
             }
     
             )
-        } else if (prop.type === "author") {
-            FetchAuthorQuotes(location.pathname.replace("/quotes/author/", ""))
+        } else if (types === "author") {
+            FetchAuthorQuotes(prop.path)
             .then((data: any) => {
                 console.log(data);
                 setQuoteList(data);
             });
-        } else if (prop.type === "tag") {
-            FetchTagQuotes(location.pathname.replace("/quotes/author/", ""))
+        } else if (types === "tag") {
+            console.log(prop.path)
+            FetchTagQuotes(prop.path)
             .then((data: any) => {
                 console.log(data);
                 setQuoteList(data);
@@ -91,36 +98,39 @@ function QuotePage(prop: Props) {
     
     }, [location.pathname])
     function ToQuote(quote: QuoteCls) {
-        return <Quote id={quote.Id} content={quote.Content} tags={quote.Tags} author={quote.Author} authorSlug={quote.AuthorSlug}/>
+        return <Quote key={quote.Id} id={quote.Id} content={quote.Content} tags={quote.Tags} author={quote.Author} authorSlug={quote.AuthorSlug}/>
     }
     return (
         <>
-        {prop.type == "random" &&
-            <>
+        {types === "random" &&
+            <div className="quote-page">
                 <h2>Random Quotes</h2>
                 <div className="list-quotes">
                     {
                         quoteList.map((quote: QuoteCls) => ToQuote(quote))
                     }
                 </div>
-            </>
+            </div>
         }
-        {prop.type == "author" &&
-            <>
+        {types === "author" &&
+            <div className="quote-page">
                 <h2>Author Quotes</h2>
                 <div className="list-quotes">
-
+                    {
+                        quoteList.map((quote: QuoteCls) => ToQuote(quote))
+                    }
                 </div>
-            </>
+            </div>
         }
-        {
-            prop.type == "tag" &&
-            <>
+        {types === "tag" &&
+            <div className="quote-page">
                 <h2>Tag Quotes</h2>
                 <div className="list-quotes">
-
+                    {
+                        quoteList.map((quote: QuoteCls) => ToQuote(quote))
+                    }   
                 </div>
-            </>
+            </div>
         }
 
         </>
