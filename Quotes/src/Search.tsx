@@ -89,41 +89,44 @@ function Search(prop: Props) {
       />
     );
   }
+
   return (
     <>
-      <div className="prop">
-        <button
-          className={
-            "search-tag " + (currentCategory === "authors" ? "on" : "off")
-          }
-          onClick={() => setCurrentCategory("authors")}
-        >
-          Authors
-        </button>
-        <button
-          className={
-            "search-tag " + (currentCategory === "tags" ? "on" : "off")
-          }
-          onClick={() => setCurrentCategory("tags")}
-        >
-          Tags
-        </button>
-      </div>
-      <div className="search-tags">
-        {currentCategory === "authors" && (
-          <>
-            <h3>Authors</h3>
-            {authors.map((author: Author) => ToAuthor(author))}
-          </>
-        )}
+      <>
+        <div className="prop">
+          <button
+            className={
+              "search-tag " + (currentCategory === "authors" ? "on" : "off")
+            }
+            onClick={() => setCurrentCategory("authors")}
+          >
+            Authors
+          </button>
+          <button
+            className={
+              "search-tag " + (currentCategory === "tags" ? "on" : "off")
+            }
+            onClick={() => setCurrentCategory("tags")}
+          >
+            Tags
+          </button>
+        </div>
+        <div className="search-tags">
+          {currentCategory === "authors" && (
+            <>
+              <h3>Authors</h3>
+              {authors.map((author: Author) => ToAuthor(author))}
+            </>
+          )}
 
-        {currentCategory === "tags" && (
-          <>
-            <h3>Tags</h3>
-            {tags.map((tag: TagCls) => ToTag(tag))}
-          </>
-        )}
-      </div>
+          {currentCategory === "tags" && (
+            <>
+              <h3>Tags</h3>
+              {tags.map((tag: TagCls) => ToTag(tag))}
+            </>
+          )}
+        </div>
+      </>
     </>
   );
 }

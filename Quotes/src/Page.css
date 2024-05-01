@@ -14,3 +14,17 @@
 .qPage {
   width: 60dvw;
 }
+.search-btn {
+  border: none;
+}
+.qPage-mob {
+  width: 80dvw;
+}
+.search-mob {
+  width: 60dvw;
+}
+#mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
