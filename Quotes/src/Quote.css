@@ -1,0 +1,6 @@
+.quote-card {
+    background-color: var(--primary);
+}
+.tag-list {
+    padding: 0.1rem 0.2rem;
+}

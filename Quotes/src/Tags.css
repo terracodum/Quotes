@@ -1,0 +1,14 @@
+.card {
+    background-color: var(--secondary);
+    padding: 0.3rem 1rem;
+    margin: 0.4rem;
+    font-size: 1.1rem;
+    width: 12rem;
+}
+.count {
+    opacity: 40%;
+}
+a {
+    color: var(--text);
+    text-decoration: none;
+}
