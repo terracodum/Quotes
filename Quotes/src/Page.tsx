@@ -11,7 +11,7 @@ function IsMobile() {
   const aspectRatio = height / width;
 
   // проверяем, соответствует ли соотношение сторон экрана мобильным устройствам
-  if (aspectRatio > 1.0 && aspectRatio < 1.9) {
+  if (aspectRatio > 1.0 ) {
     return true;
   }
 
